@@ -129,7 +129,8 @@ public class VendingMachineMain {
 			while (!exit) {
 				System.out
 						.println("Amount credited :  " + String.format("%.2f", this.customerAmount * 100) + " cents ");
-				System.out.println("Please enter a selection, $ to add credit or EXIT to quit: ");
+				System.out.println(
+						"Please enter a selection, $ to add credit, enter CANCEL for cancellation and EXIT to Quit: ");
 				if (input.hasNextInt()) {
 					int selection = input.nextInt();
 					if (productsMenu.containsKey(selection)) {
@@ -142,6 +143,11 @@ public class VendingMachineMain {
 					String command = input.next();
 					if ("$".equalsIgnoreCase(command)) {
 						inputCoinsInVendingMachine();
+					} else if ("CANCEL".equalsIgnoreCase(command)) {
+						System.out
+								.println("Refunded  " + String.format("%.2f", this.customerAmount * 100) + " cents and please collect the amount");
+						System.out.println("Goodbye ! Have a nice day");
+						System.exit(0);
 					} else if ("EXIT".equalsIgnoreCase(command)) {
 						System.out.println("Goodbye ! Have a nice day");
 						System.exit(0);

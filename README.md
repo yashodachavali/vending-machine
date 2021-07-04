@@ -12,7 +12,7 @@
 ### Setup
 
  * git clone <a>https://github.com/yashodachavali/vending-machine.git</a>
- * Import project as maven project in eclipse/intelliJ IDE and right click on <b> VendingMachineMain.java <b> and run it .
+ * Import project as maven project in eclipse/intelliJ IDE and right click on <b> VendingMachineMain.java </b> and run it .
 
 ### Environment
   * Java 1.8
