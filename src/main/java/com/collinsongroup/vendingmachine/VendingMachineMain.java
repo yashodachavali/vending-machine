@@ -128,7 +128,7 @@ public class VendingMachineMain {
 			inputCoinsInVendingMachine();
 			while (!exit) {
 				System.out
-						.println(" Amount credited :  " + String.format("%.2f", this.customerAmount * 100) + " cents ");
+						.println("Amount credited :  " + String.format("%.2f", this.customerAmount * 100) + " cents ");
 				System.out.println(
 						"Please enter a selection, $ to add credit, enter CANCEL for cancellation and EXIT to Quit: ");
 				if (input.hasNextInt()) {
@@ -171,7 +171,7 @@ public class VendingMachineMain {
 	}
 
 	public void calculateChange(Double needed) {
-		System.out.format("Change needed : %.2f", needed);
+		System.out.format("Your change is : %.2f%n", (needed * 100), "cents");
 		double temp = needed;
 		for (Double value : change.descendingMap().keySet()) {
 			int numCoins = (int) (temp / value.doubleValue());
@@ -180,7 +180,6 @@ public class VendingMachineMain {
 				int old = change.get(value).intValue();
 				if (numCoins < old) {
 					change.put(value, new Integer(old - numCoins));
-					System.out.println("Please take your " + numCoins + " coin of " + value);
 				}
 			}
 		}
