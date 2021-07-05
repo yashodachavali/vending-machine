@@ -101,12 +101,12 @@ public class VendingMachineMain {
 				this.dispenseProduct(current);
 				this.calculateChange(money - expected);
 				this.customerAmount = (double) (money - expected);
-			} else
+			} else {
 				System.out.println("Sorry ! Not enough change. Aborting operation");
+			}
 		} else
-			System.out.format("Sorry, Insufficent funds ! Please insert %.2f ",
-					(expected - money) + " to buy this Product");
-
+			System.out.println("Sorry, Insufficent funds ! Please insert " + String.format("%.2f", expected - money)
+					+ " to buy this Product");
 	}
 
 	public void dispenseProduct(Product newProduct) {
@@ -128,7 +128,7 @@ public class VendingMachineMain {
 			inputCoinsInVendingMachine();
 			while (!exit) {
 				System.out
-						.println("Amount credited :  " + String.format("%.2f", this.customerAmount * 100) + " cents ");
+						.println(" Amount credited :  " + String.format("%.2f", this.customerAmount * 100) + " cents ");
 				System.out.println(
 						"Please enter a selection, $ to add credit, enter CANCEL for cancellation and EXIT to Quit: ");
 				if (input.hasNextInt()) {
@@ -144,8 +144,8 @@ public class VendingMachineMain {
 					if ("$".equalsIgnoreCase(command)) {
 						inputCoinsInVendingMachine();
 					} else if ("CANCEL".equalsIgnoreCase(command)) {
-						System.out
-								.println("Refunded  " + String.format("%.2f", this.customerAmount * 100) + " cents and please collect the amount");
+						System.out.println("Refunded  " + String.format("%.2f", this.customerAmount * 100)
+								+ " cents and please collect the amount");
 						System.out.println("Goodbye ! Have a nice day");
 						System.exit(0);
 					} else if ("EXIT".equalsIgnoreCase(command)) {
